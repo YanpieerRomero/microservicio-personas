@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: personas-pod
+  labels:
+    app: personas-app
+spec:
+  containers:
+    - name: personas-container
+      image: yanpieer/personas-image
+      ports:
+        - containerPort: 8090

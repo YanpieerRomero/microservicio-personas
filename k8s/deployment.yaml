@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personas-deployment
+  labels:
+    app: personas-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: personas-app
+  template:
+    metadata:
+      name: personas-pod
+      labels:
+        app: personas-app
+    spec:
+      containers:
+        - name: personas-container
+          image: yanpieer/personas-image
+          ports:
+            - containerPort: 8090

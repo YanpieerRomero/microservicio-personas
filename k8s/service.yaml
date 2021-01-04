@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: personas-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: personas-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8090
